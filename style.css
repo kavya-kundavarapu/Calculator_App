@@ -1,0 +1,155 @@
+/* Default Light Mode Background */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  transition: 0.5s;
+}
+
+/* Dark Mode Background */
+body.dark {
+  background: linear-gradient(to right, #000428, #004e92);
+  color: white;
+}
+
+/* Calculator Box */
+.calculator {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 320px;
+  transition: 0.5s;
+}
+
+/* Dark Mode for Calculator */
+body.dark .calculator {
+  background: #222;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Input fields */
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+body.dark input {
+  background: #333;
+  color: white;
+  border: 2px solid white;
+}
+
+/* Button container */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Colorful buttons with Neon Glow */
+button {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Button colors */
+.add {
+  background-color: #4caf50;
+  color: white;
+}
+.subtract {
+  background-color: #ff9800;
+  color: white;
+}
+.multiply {
+  background-color: #2196f3;
+  color: white;
+}
+.divide {
+  background-color: #e91e63;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px white;
+}
+
+/* Dark Mode for Buttons */
+body.dark .add {
+  background-color: #5cdb95;
+}
+body.dark .subtract {
+  background-color: #ffcc29;
+}
+body.dark .multiply {
+  background-color: #2f80ed;
+}
+body.dark .divide {
+  background-color: #ff4081;
+}
+
+/* Result text */
+h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+body.dark h3 {
+  color: white;
+}
+
+/* Clear button */
+#clear {
+  background-color: #ff4444;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#clear:hover {
+  background-color: #cc0000;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: white;
+  color: black;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <h2>Simple Calculator</h2>
+      <button id="theme-toggle">🌙 Dark Mode</button>
+      <input type="number" id="num1" placeholder="Enter first number" />
+      <input type="number" id="num2" placeholder="Enter second number" />
+
+      <div class="buttons">
+        <button onclick="calculate('+')" class="add">+</button>
+        <button onclick="calculate('-')" class="subtract">-</button>
+        <button onclick="calculate('*')" class="multiply">×</button>
+        <button onclick="calculate('/')" class="divide">÷</button>
+      </div>
+
+      <h3>Result: <span id="result">0</span></h3>
+      <button id="clear" onclick="clearFields()">Clear</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
