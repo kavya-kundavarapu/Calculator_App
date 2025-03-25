@@ -1,155 +1,180 @@
-/* Default Light Mode Background */
+/* Overall Page Styling */
 body {
-  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #2e3192,
+    #1bffff
+  ); /* Gradient background */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  transition: 0.5s;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
-
-/* Dark Mode Background */
-body.dark {
-  background: linear-gradient(to right, #000428, #004e92);
-  color: white;
-}
-
-/* Calculator Box */
-.calculator {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  width: 320px;
-  transition: 0.5s;
-}
-
-/* Dark Mode for Calculator */
-body.dark .calculator {
-  background: #222;
-  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Input fields */
-input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-body.dark input {
-  background: #333;
-  color: white;
-  border: 2px solid white;
-}
-
-/* Button container */
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-/* Colorful buttons with Neon Glow */
-button {
-  width: 60px;
-  height: 60px;
-  margin: 5px;
-  font-size: 20px;
+/* Glowing Title Effect */
+.calculator-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
   font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  background: linear-gradient(45deg, white, gray);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8),
+    0px 0px 20px rgba(0, 255, 255, 1); /* Added glowing effect */
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Button colors */
-.add {
-  background-color: #4caf50;
-  color: white;
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.subtract {
-  background-color: #ff9800;
-  color: white;
+/* Glowing Thank You Text */
+.thank-you-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem; /* Increased size */
+  font-weight: 950; /* Bolder */
+  text-transform: uppercase;
+  background: linear-gradient(45deg, whitesmoke, lightblue);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1),
+    0px 0px 30px rgba(0, 255, 255, 1), 0px 0px 40px rgba(0, 255, 255, 0.8); /* Brighter glow */
+  opacity: 1; /* Full visibility */
+  animation: fadeIn 2s ease-in-out;
 }
-.multiply {
-  background-color: #2196f3;
-  color: white;
-}
-.divide {
-  background-color: #e91e63;
-  color: white;
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 15px white;
+/* Calculator Container */
+.calculator {
+  background: #ffffff;
+  padding: 20px;
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Dark Mode for Buttons */
-body.dark .add {
-  background-color: #5cdb95;
-}
-body.dark .subtract {
-  background-color: #ffcc29;
-}
-body.dark .multiply {
-  background-color: #2f80ed;
-}
-body.dark .divide {
-  background-color: #ff4081;
+/* Add slight hover animation */
+.calculator:hover {
+  transform: scale(1.05);
 }
 
-/* Result text */
-h3 {
+/* Display Screen */
+#display {
+  width: 80%;
+  height: 50px; /* Proper height */
+  font-size: 30px; /* Medium-sized text */
+  font-weight: bold; /* Bold for better visibility */
+  text-align: right; /* Align numbers to the right */
+  padding: 10px; /* Inner spacing */
+  background-color: lightgray; /* Dark Gray background */
+  color: #219ebc; /* White text for high contrast */
+  border-radius: 8px; /* Smooth rounded corners */
+  margin-bottom: 15px; /* Space below */
+  margin-top: 15px; /* Space above */
+  border: none; /* Remove default border */
+  outline: none; /* Remove focus outline */
+  box-shadow: whitesmoke; /* Adds depth effect */
+}
+
+/* Buttons Grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
   margin-top: 15px;
+}
+
+/* Calculator Buttons */
+button {
+  background: #219ebc;
+  color: white;
+  border: none;
+  transition: 0.2s ease-in-out;
+  padding: 15px;
   font-size: 20px;
-  color: #333;
-}
-
-body.dark h3 {
-  color: white;
-}
-
-/* Clear button */
-#clear {
-  background-color: #ff4444;
-  color: white;
-  padding: 10px 15px;
-  border: none;
   border-radius: 10px;
-  font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
-#clear:hover {
-  background-color: #cc0000;
+/* Hover Effect */
+button:hover {
+  background: #126782;
+  transform: scale(1.05);
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
-  background-color: black;
+/* Default Light Mode */
+
+body {
+  background-color: #f5f5f5;
+
+  color: #333;
+
+  transition: background 0.3s, color 0.3s;
+}
+
+/*Dark Mode Styles */
+.dark-mode {
+  background-color: linear-gradient(135deg, #111, #444);
+
   color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-bottom: 10px;
-  transition: 0.3s;
 }
 
-#theme-toggle:hover {
-  background-color: white;
-  color: black;
+.dark-mode .calculator {
+  background-color: #333;
+
+  color: white;
+}
+.dark-mode button {
+  background-color: #555;
+
+  color: white;
+
+  border: 1px solid white;
+}
+
+/* Placeholder color */
+
+#display::placeholder {
+  color: #21867a; /* Light gray text */
+  width: 100%; /* Ensures it remains full width */
+  /* Fixed missing semicolon */
+  color: #ffffff;
+  font-size: 24px;
+}
+.dark-mode #result {
+  background-color: #333333 !important; /* Dark background */
+  color: #ffffff !important; /* White text */
+}
+.dark-mode #display {
+  background-color: #333;
+  color: #ffffff;
 }
